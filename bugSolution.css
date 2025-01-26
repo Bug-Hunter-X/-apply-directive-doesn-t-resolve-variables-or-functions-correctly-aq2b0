@@ -1,0 +1,14 @@
+To fix this, avoid using variables or functions directly within the `@apply` directive. Instead, define your styles using the resolved values or stick to standard Tailwind utility classes. For the example above:
+
+```css
+:root {
+  --custom-blue: #3498db;
+}
+
+.my-custom-class {
+  background-color: var(--custom-blue); /* Correct way to apply variable */
+  @apply p-4 text-white;  /* Using standard Tailwind classes */
+}
+```
+
+This ensures that the styles are applied correctly without relying on the `@apply` directive to handle variable or function resolution.  If you need dynamic styling, consider using JavaScript or another method outside of the CSS `@apply` directive itself.
